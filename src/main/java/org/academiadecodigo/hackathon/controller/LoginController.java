@@ -1,4 +1,4 @@
 package org.academiadecodigo.hackathon.controller;
 
-public class LoginController {
+public class LoginController extends AbstractController{
 }

@@ -1,4 +1,4 @@
 package org.academiadecodigo.hackathon.model;
 
-public class Product extends AbstractModel {
+public interface Model {
 }

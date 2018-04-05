@@ -1,4 +1,6 @@
 package org.academiadecodigo.hackathon.service;
 
-public class UserService {
+import org.academiadecodigo.hackathon.model.Product;
+
+public interface UserService {
 }
