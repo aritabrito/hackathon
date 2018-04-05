@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.model;
 
+import org.academiadecodigo.hackathon.model.products.Product;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
@@ -21,6 +23,13 @@ public class User extends AbstractModel {
             fetch = FetchType.EAGER
     )
     private Map<Integer, Product> productsList = new HashMap<>();
+
+    public User() {
+    }
+
+    public void addProduct(Product product){
+        productsList.put(product.getId(), product);
+    }
 
     public String getFirstName() {
         return firstName;

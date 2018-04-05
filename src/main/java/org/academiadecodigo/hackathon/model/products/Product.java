@@ -15,6 +15,10 @@ public class Product extends AbstractModel {
 
     private String name;
 
+    private Integer price;
+
+    private String description;
+
     public Category getCategory() {
         return category;
     }
@@ -31,4 +35,19 @@ public class Product extends AbstractModel {
         this.name = name;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
