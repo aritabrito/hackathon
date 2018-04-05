@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.model;
 
+import org.academiadecodigo.hackathon.model.products.Product;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
