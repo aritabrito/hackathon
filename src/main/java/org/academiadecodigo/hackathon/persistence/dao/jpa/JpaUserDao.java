@@ -11,4 +11,15 @@ public class JpaUserDao extends JpaAbstractDao implements UserDao {
 
         super(jpaSessionManager, User.class);
     }
+
+
+    @Override
+    public boolean authenticate(Integer id) {
+        return false;
+    }
+
+    @Override
+    public User getAccessingUser() {
+        return null;
+    }
 }
