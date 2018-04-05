@@ -24,6 +24,13 @@ public class User extends AbstractModel {
     )
     private Map<Integer, Product> productsList = new HashMap<>();
 
+    public User() {
+    }
+
+    public void addProduct(Product product){
+        productsList.put(product.getId(), product);
+    }
+
     public String getFirstName() {
         return firstName;
     }
