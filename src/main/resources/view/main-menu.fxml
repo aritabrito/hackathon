@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.MainMenuController">
    <children>
       <HBox alignment="TOP_RIGHT" prefHeight="40.0">
          <children>
@@ -34,7 +34,7 @@
                   <Insets bottom="100.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../../../../../logo.jpg" />
+                  <Image url="/images/logo.jpg" />
                </image>
             </ImageView>
          </children>
@@ -43,19 +43,19 @@
          <children>
             <ImageView fx:id="catOne" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatOneClick" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../carrots.jpg" />
+                  <Image url="/images/carrots.jpg" />
                </image>
             </ImageView>
             <Pane prefHeight="100.0" prefWidth="100.0" />
             <ImageView fx:id="catTwo" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatTwoClick" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../animals.jpg" />
+                  <Image url="/images/animals.jpg" />
                </image>
             </ImageView>
             <Pane prefHeight="100.0" prefWidth="100.0" />
             <ImageView fx:id="catThree" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatThreeClick" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../tractor.jpg" />
+                  <Image url="/images/tractor.jpg" />
                </image>
             </ImageView>
          </children>
