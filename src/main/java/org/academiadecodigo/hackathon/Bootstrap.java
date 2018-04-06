@@ -28,7 +28,7 @@ public class Bootstrap {
         User user2 = new User();
         user2.setFirstName("Catarina");
         user2.setLastName("Machado");
-        user2.setUsername("cat");
+        user2.setUsername("oldlady");
         user2.setEmail("cat@corn.com");
         user2.setPassword("123");
 
