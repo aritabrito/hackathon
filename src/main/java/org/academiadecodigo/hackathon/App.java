@@ -78,7 +78,7 @@ public class App extends Application {
         ServiceRegistry.getServiceRegistry().registerService(UserService.class.getSimpleName(), userService);
         ServiceRegistry.getServiceRegistry().registerService(CategoryService.class.getSimpleName(), jpaCategoryService);
         ServiceRegistry.getServiceRegistry().registerService(ProductService.class.getSimpleName(), productService);
-        ServiceRegistry.getServiceRegistry().registerService(JpaAuthenticateLogin.class.getSimpleName(), jpaAuthenticateLogin);
+        ServiceRegistry.getServiceRegistry().registerService(AuthenticateLogin.class.getSimpleName(), jpaAuthenticateLogin);
 
 
 

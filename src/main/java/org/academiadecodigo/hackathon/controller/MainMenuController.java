@@ -56,6 +56,7 @@ public class MainMenuController extends AbstractController {
     @FXML
     void onCatOneClick(MouseEvent event) {
         productService = (ProductService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
+
         nextController = (ProductsController) Navigation.getInstance().getController(NEXT);
         nextController.setCategoryType(CategoryType.FOOD);
         Navigation.getInstance().loadView(ProductsController.getName());

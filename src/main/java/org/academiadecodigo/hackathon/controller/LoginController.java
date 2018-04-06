@@ -8,7 +8,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.service.AuthenticateLogin;
-import org.academiadecodigo.hackathon.service.Service;
 import org.academiadecodigo.hackathon.service.ServiceRegistry;
 import org.academiadecodigo.hackathon.service.UserService;
 import org.academiadecodigo.hackathon.service.jpa.JpaAuthenticateLogin;
@@ -37,19 +36,23 @@ public class LoginController extends AbstractController implements Controller {
 
     @FXML
     void onLogin(ActionEvent event) {
-
+        doLogin();
     }
 
+    @FXML
     public void initialize() {
+
+        message.setText("");
+
 
         userService = (JpaUserService) ServiceRegistry.getServiceRegistry().getService(UserService.class.getSimpleName());
         authenticate = (JpaAuthenticateLogin) ServiceRegistry.getServiceRegistry().getService(AuthenticateLogin.class.getSimpleName());
 
-        if (userService == null) {
+        if (userService == null || authenticate == null) {
             throw new IllegalStateException("Unable to load user service from registry.");
         }
 
-        doLogin();
+
     }
 
     private void doLogin() {
@@ -64,12 +67,14 @@ public class LoginController extends AbstractController implements Controller {
             return;
         }
 
-        if (!authenticate.authenticateLogin(username.getText(), password.getText())) {
+        if (!authenticate.authenticateLogin(
+                username.getText(), password.getText())) {
             message.setText("authentication failed");
             return;
         }
 
         message.setText("login accepted");
+
         Navigation.getInstance().loadView(MainMenuController.getName());
     }
 

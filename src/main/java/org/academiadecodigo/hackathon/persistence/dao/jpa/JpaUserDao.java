@@ -48,7 +48,7 @@ public class JpaUserDao extends JpaAbstractDao implements UserDao {
 
             criteriaQuery.select(root);
 
-            criteriaQuery.where(builder.equal(root.get("name"), name));
+            criteriaQuery.where(builder.equal(root.get("username"), name));
 
             return sessionManager.getEntityManager().createQuery(criteriaQuery).getSingleResult();
         }catch (HibernateException ex){
