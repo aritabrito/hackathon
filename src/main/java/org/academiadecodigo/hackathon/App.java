@@ -50,5 +50,7 @@ public class App {
         em1.getTransaction().commit();
         em1.close();
 
+        System.out.println(user.getProductsList());
+
     }
 }

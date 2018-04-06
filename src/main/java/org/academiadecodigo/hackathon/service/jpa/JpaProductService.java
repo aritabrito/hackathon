@@ -5,8 +5,8 @@ import org.academiadecodigo.hackathon.model.products.Product;
 import org.academiadecodigo.hackathon.persistence.dao.Dao;
 import org.academiadecodigo.hackathon.persistence.jpa.JpaTransactionManager;
 import org.academiadecodigo.hackathon.service.ProductService;
-
 import java.util.List;
+
 
 public class JpaProductService extends AbstractJpaService<Product> implements ProductService {
 
@@ -17,6 +17,7 @@ public class JpaProductService extends AbstractJpaService<Product> implements Pr
 
     public List<Product> productList(Category category) {
 
-
+        List<Product> productList = null;
+        return productList = category.getProductList();
     }
 }

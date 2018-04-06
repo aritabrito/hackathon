@@ -6,8 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Table(name = "category")
@@ -20,11 +20,11 @@ public class Category extends AbstractModel {
             orphanRemoval = true,
             mappedBy = "category"
     )
-    private Map<Integer, Product> productMap;
+    private List<Product> productList;
 
 
     public Category() {
-        this.productMap = new HashMap<>();
+        this.productList = new LinkedList<>();
     }
 
     public String getName() {
@@ -35,17 +35,17 @@ public class Category extends AbstractModel {
         this.name = name;
     }
 
-    public Map<Integer, Product> getProductMap() {
-        return productMap;
+    public List<Product> getProductList() {
+        return productList;
     }
 
-    public void setProductMap(Map<Integer, Product> productMap) {
-        this.productMap = productMap;
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         product.setCategory(this);
-        productMap.put(product.getId(), product);
+        productList.add(product);
     }
 }
 

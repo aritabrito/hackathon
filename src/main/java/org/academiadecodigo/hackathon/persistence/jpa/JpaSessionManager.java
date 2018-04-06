@@ -34,6 +34,7 @@ public class JpaSessionManager implements SessionManager<EntityManager> {
 
     @Override
     public EntityManager getEntityManager() {
+        startSession();
         return em;
     }
 
