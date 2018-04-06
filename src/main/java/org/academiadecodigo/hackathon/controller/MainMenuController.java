@@ -1,12 +1,15 @@
 package org.academiadecodigo.hackathon.controller;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.service.ProductService;
-import javafx.scene.layout.Pane;
+
+
 
 public class MainMenuController extends AbstractController {
 
@@ -17,27 +20,14 @@ public class MainMenuController extends AbstractController {
     private ProductsController nextController;
 
 
+    @FXML
+    void onAnimalsClick(MouseEvent event) {
 
-
-
-
-
-
-
-        @FXML
-        private Pane animalsButton;
-
-        @FXML
-        void onAnimalsClick(MouseEvent event) {
-            Navigation.getInstance().loadView(ProductsController.getName());
-        }
-
-
-
-
-
-
-
+        String musicFile = "/sound/soundFx.wav";
+        AudioClip audioClip = new AudioClip(getClass().getResource(musicFile).toExternalForm());
+        audioClip.play();
+        Navigation.getInstance().loadView(ProductsController.getName());
+    }
 
 
     @FXML

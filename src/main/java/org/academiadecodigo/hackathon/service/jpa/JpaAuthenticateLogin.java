@@ -2,7 +2,6 @@ package org.academiadecodigo.hackathon.service.jpa;
 
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.persistence.TransactionException;
-
 import org.academiadecodigo.hackathon.persistence.dao.jpa.JpaUserDao;
 import org.academiadecodigo.hackathon.persistence.jpa.JpaTransactionManager;
 import org.academiadecodigo.hackathon.service.AuthenticateLogin;

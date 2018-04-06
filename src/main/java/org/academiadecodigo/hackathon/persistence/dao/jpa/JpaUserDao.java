@@ -2,13 +2,10 @@ package org.academiadecodigo.hackathon.persistence.dao.jpa;
 
 import org.academiadecodigo.hackathon.model.User;
 import org.academiadecodigo.hackathon.model.products.Product;
-import org.academiadecodigo.hackathon.persistence.SessionManager;
 import org.academiadecodigo.hackathon.persistence.TransactionException;
 import org.academiadecodigo.hackathon.persistence.dao.UserDao;
-import org.academiadecodigo.hackathon.persistence.dao.jpa.JpaAbstractDao;
 import org.academiadecodigo.hackathon.persistence.jpa.JpaSessionManager;
 import org.hibernate.HibernateException;
-
 import javax.persistence.RollbackException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

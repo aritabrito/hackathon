@@ -5,7 +5,6 @@ import org.academiadecodigo.hackathon.persistence.TransactionException;
 import org.academiadecodigo.hackathon.persistence.dao.Dao;
 import org.academiadecodigo.hackathon.persistence.jpa.JpaSessionManager;
 import org.hibernate.HibernateException;
-
 import javax.persistence.RollbackException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;

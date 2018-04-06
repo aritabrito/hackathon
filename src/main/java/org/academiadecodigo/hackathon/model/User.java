@@ -1,16 +1,12 @@
 package org.academiadecodigo.hackathon.model;
 
-import antlr.LexerSharedInputState;
 import org.academiadecodigo.hackathon.model.products.Product;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Table(name = "user")
