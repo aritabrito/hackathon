@@ -8,6 +8,8 @@ import org.academiadecodigo.hackathon.CategoryType;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.service.ProductService;
 import org.academiadecodigo.hackathon.service.ServiceRegistry;
+import javafx.fxml.FXML;
+import javafx.scene.layout.Pane;
 
 public class MainMenuController extends AbstractController {
 
@@ -16,6 +18,27 @@ public class MainMenuController extends AbstractController {
 
     private ProductService productService;
     private ProductsController nextController;
+
+
+
+
+
+
+        @FXML
+        private Pane animalsButton;
+
+        @FXML
+        void onAnimalsClick(MouseEvent event) {
+            Navigation.getInstance().loadView(ProductsController.getName());
+        }
+
+
+
+
+
+
+
+
 
     @FXML
     private MenuItem buy;
@@ -57,7 +80,7 @@ public class MainMenuController extends AbstractController {
     @FXML
     void onCatOneClick(MouseEvent event) {
 
-        Navigation.getInstance().loadView(ProductsController.getName());
+        //Navigation.getInstance().loadView(ProductsController.getName());
     }
 
     @FXML
@@ -72,7 +95,7 @@ public class MainMenuController extends AbstractController {
 
     @FXML
     void onLogout(ActionEvent event) {
-        Navigation.getInstance().back();
+        //Navigation.getInstance().back();
     }
 
     public static String getName() {

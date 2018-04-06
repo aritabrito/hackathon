@@ -49,16 +49,10 @@ public class LoginController extends AbstractController implements Controller {
 
 
 
-
-    /*@FXML
-    void onLogin(ActionEvent event) {
-        doLogin();
-    }*/
-
     @FXML
     public void initialize() {
 
-        //message.setText("");
+        message.setText("");
 
 
         userService = (JpaUserService) ServiceRegistry.getServiceRegistry().getService(UserService.class.getSimpleName());
@@ -74,22 +68,22 @@ public class LoginController extends AbstractController implements Controller {
     private void doLogin() {
 
         if (username.getText().isEmpty()) {
-            //message.setText("username missing");
+            message.setText("username missing");
             return;
         }
 
         if (password.getText().isEmpty()) {
-            //message.setText("password missing");
+            message.setText("password missing");
             return;
         }
 
         if (!authenticate.authenticateLogin(
                 username.getText(), password.getText())) {
-            //message.setText("authentication failed");
+            message.setText("authentication failed");
             return;
         }
 
-        //message.setText("login accepted");
+        message.setText("login accepted");
 
         Navigation.getInstance().loadView(MainMenuController.getName());
     }

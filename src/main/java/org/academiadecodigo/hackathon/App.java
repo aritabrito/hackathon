@@ -101,7 +101,7 @@ public class App extends Application {
 
         navigation.loadView(LoginController.getName());
 
-        primaryStage.setTitle("login");
+        primaryStage.setTitle("OpportuniCorn");
         primaryStage.show();
     }
 

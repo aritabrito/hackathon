@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -11,19 +11,18 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 
-<?import javafx.scene.control.TextField?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.LoginController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="1024.0" layoutY="1.0">
+      <ImageView fitHeight="615.0" fitWidth="1038.0" layoutX="-7.0" layoutY="-8.0">
          <image>
-            <Image url="/images/login1.png"/>
+            <Image url="/images/login.png" />
          </image>
       </ImageView>
-      <Pane fx:id="login" layoutX="423.0" layoutY="495.0" onMouseClicked="#onLogin" prefHeight="42.0" prefWidth="179.0" />
-      <GridPane layoutX="363.0" layoutY="301.0" prefHeight="124.0" prefWidth="299.0">
+      <Pane fx:id="login" layoutX="424.0" layoutY="502.0" onMouseClicked="#onLogin" prefHeight="41.0" prefWidth="173.0" />
+       <Label fx:id="message" layoutX="495.0" layoutY="464.0" text="Label" textAlignment="CENTER" />
+      <GridPane layoutX="426.0" layoutY="317.0" prefHeight="90.0" prefWidth="173.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="64.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="238.0" minWidth="10.0" prefWidth="235.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -31,14 +30,8 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="CENTER" text="username" GridPane.halignment="RIGHT" />
-            <Label text="password" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <TextField fx:id="username" GridPane.columnIndex="1">
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </TextField>
-            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="username" promptText="username" />
+            <PasswordField fx:id="password" promptText="password" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

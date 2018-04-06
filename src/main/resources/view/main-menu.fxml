@@ -1,65 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Button?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.MainMenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.controller.MainMenuController">
    <children>
-      <HBox alignment="TOP_RIGHT" prefHeight="40.0">
-         <children>
-            <MenuButton mnemonicParsing="false" text="options">
-              <items>
-                <MenuItem fx:id="buy" mnemonicParsing="false" onAction="#onBuy" text="Buy Corn Cobs" />
-                <MenuItem fx:id="cart" mnemonicParsing="false" onAction="#onCart" text="My Cart" />
-                  <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#onLogout" text="Logout" />
-                  <MenuItem fx:id="about" mnemonicParsing="false" onAction="#onAbout" text="About" />
-              </items>
-               <HBox.margin>
-                  <Insets right="20.0" top="20.0" />
-               </HBox.margin>
-            </MenuButton>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <HBox.margin>
-                  <Insets bottom="100.0" />
-               </HBox.margin>
-               <image>
-                  <Image url="/images/logo.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fx:id="catOne" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatOneClick" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/images/carrots.jpg" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="100.0" prefWidth="100.0" />
-            <ImageView fx:id="catTwo" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatTwoClick" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/images/animals.jpg" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="100.0" prefWidth="100.0" />
-            <ImageView fx:id="catThree" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#onCatThreeClick" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="/images/tractor.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
+
+      <ImageView fitHeight="615.0" fitWidth="1038.0" layoutX="-7.0" layoutY="-8.0">
+         <image>
+            <Image url="/images/menu.png" />
+         </image>
+      </ImageView>
+
+
+
+      <Pane fx:id="animalsButton" layoutX="310.0" layoutY="387.0" onMouseClicked="#onAnimalsClick" prefHeight="119.0" prefWidth="177.0" />
    </children>
-</VBox>
+</Pane>

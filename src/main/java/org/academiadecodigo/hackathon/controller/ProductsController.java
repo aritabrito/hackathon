@@ -2,6 +2,8 @@ package org.academiadecodigo.hackathon.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import org.academiadecodigo.hackathon.CategoryType;
 import org.academiadecodigo.hackathon.model.products.Category;
@@ -12,6 +14,9 @@ import org.academiadecodigo.hackathon.service.jpa.JpaCategoryService;
 import org.academiadecodigo.hackathon.service.jpa.JpaProductService;
 
 import java.util.List;
+
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 
 public class ProductsController extends AbstractController {
 
@@ -26,67 +31,43 @@ public class ProductsController extends AbstractController {
 
     }
 
-    // se categoria 1 -> mostra prods 1
-    // se categoria 2 -> mostra prods 2
-    // se categoria 3 -> mostra prods 3
+
+        @FXML
+        private ImageView donkey;
+    @FXML
+    private ImageView cow;
+    @FXML
+    private ImageView chicken;
+    @FXML
+    private ImageView rabbit;
+    @FXML
+    private ImageView sheep;
 
 
-    public void setCategoryType(CategoryType categoryType) {
-        this.categoryType = categoryType;
+
+    @FXML
+    void donkeyClicked(MouseEvent event) {
+        donkey.setVisible(false);
     }
 
     @FXML
-    private Pane pane1;
-
-    @FXML
-    private Pane pane2;
-
-    @FXML
-    private Button deleteButton;
-
-    @FXML
-    private Button saveButton;
-
-
-    @FXML
-    public void initialize() {
-
-       /* categoryService = (JpaCategoryService) ServiceRegistry.getServiceRegistry().getService(JpaProductService.class.getSimpleName());
-
-        List<Category> categories = categoryService.categories();
-
-        switch (categoryType) {
-            case FOOD:
-
-                productService.productList(categories.get(1));
-
-                break;
-            case ANIMALS:
-                productService.productList(categories.get(2));
-                break;
-            case VEHICLES:
-                productService.productList(categories.get(3));
-                break;
-        }*/
-
-    }
-
-
-
-    @FXML
-    void onDeleteButton(ActionEvent event) {
-
-        productService = (JpaProductService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
-
-        if (productService == null) {
-            throw new IllegalStateException("Unable to load user service from registry");
-        }
-
+    void cowClicked(MouseEvent event) {
+        cow.setVisible(false);
     }
 
     @FXML
-    void onSaveButton(ActionEvent event) {
+    void chickenClicked(MouseEvent event) {
+        chicken.setVisible(false);
+    }
 
+    @FXML
+    void rabbitClicked(MouseEvent event) {
+        rabbit.setVisible(false);
+    }
+
+    @FXML
+    void sheepClicked(MouseEvent event) {
+        sheep.setVisible(false);
     }
 
     public static String getName() {
