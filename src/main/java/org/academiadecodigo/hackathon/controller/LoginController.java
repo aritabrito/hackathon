@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.service.AuthenticateLogin;
 import org.academiadecodigo.hackathon.service.ServiceRegistry;
@@ -24,7 +26,8 @@ public class LoginController extends AbstractController implements Controller {
     private PasswordField password;
 
     @FXML
-    private Button loginButton;
+    private Pane login;
+
 
     @FXML
     private Label message;
@@ -34,15 +37,28 @@ public class LoginController extends AbstractController implements Controller {
     private JpaUserService userService;
 
 
-    @FXML
+
+
+
+
+        @FXML
+        void onLogin(MouseEvent event) {
+            doLogin();
+        }
+
+
+
+
+
+    /*@FXML
     void onLogin(ActionEvent event) {
         doLogin();
-    }
+    }*/
 
     @FXML
     public void initialize() {
 
-        message.setText("");
+        //message.setText("");
 
 
         userService = (JpaUserService) ServiceRegistry.getServiceRegistry().getService(UserService.class.getSimpleName());
@@ -58,22 +74,22 @@ public class LoginController extends AbstractController implements Controller {
     private void doLogin() {
 
         if (username.getText().isEmpty()) {
-            message.setText("username missing");
+            //message.setText("username missing");
             return;
         }
 
         if (password.getText().isEmpty()) {
-            message.setText("password missing");
+            //message.setText("password missing");
             return;
         }
 
         if (!authenticate.authenticateLogin(
                 username.getText(), password.getText())) {
-            message.setText("authentication failed");
+            //message.setText("authentication failed");
             return;
         }
 
-        message.setText("login accepted");
+        //message.setText("login accepted");
 
         Navigation.getInstance().loadView(MainMenuController.getName());
     }

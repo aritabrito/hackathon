@@ -53,25 +53,21 @@ public class MainMenuController extends AbstractController {
 
     }
 
+
     @FXML
     void onCatOneClick(MouseEvent event) {
-        productService = (ProductService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
 
-        nextController = (ProductsController) Navigation.getInstance().getController(NEXT);
-        nextController.setCategoryType(CategoryType.FOOD);
         Navigation.getInstance().loadView(ProductsController.getName());
     }
 
     @FXML
     void onCatTwoClick(MouseEvent event) {
-        nextController.setCategoryType(CategoryType.ANIMALS);
-        Navigation.getInstance().loadView(ProductsController.getName());
+        //Navigation.getInstance().loadView(ProductsController.getName());
     }
 
     @FXML
     void onCatThreeClick(MouseEvent event) {
-        nextController.setCategoryType(CategoryType.VEHICLES);
-        Navigation.getInstance().loadView(ProductsController.getName());
+        //Navigation.getInstance().loadView(ProductsController.getName());
     }
 
     @FXML

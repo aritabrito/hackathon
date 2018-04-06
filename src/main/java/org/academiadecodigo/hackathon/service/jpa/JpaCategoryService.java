@@ -24,6 +24,7 @@ public class JpaCategoryService extends AbstractJpaService<Category> implements 
 
         try {
             categories =  dao.findAll();
+            System.out.println(categories);
 
         } catch (TransactionException ex) {
             tm.rollback();

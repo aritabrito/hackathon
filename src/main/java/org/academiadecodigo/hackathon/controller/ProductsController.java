@@ -48,9 +48,10 @@ public class ProductsController extends AbstractController {
     private Button saveButton;
 
 
+    @FXML
     public void initialize() {
 
-        categoryService = (JpaCategoryService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
+       /* categoryService = (JpaCategoryService) ServiceRegistry.getServiceRegistry().getService(JpaProductService.class.getSimpleName());
 
         List<Category> categories = categoryService.categories();
 
@@ -66,7 +67,7 @@ public class ProductsController extends AbstractController {
             case VEHICLES:
                 productService.productList(categories.get(3));
                 break;
-        }
+        }*/
 
     }
 
