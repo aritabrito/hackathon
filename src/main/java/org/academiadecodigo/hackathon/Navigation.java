@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Navigation {
 
-    public static final String VIEW_PATH = "/org/academiadecodigo/hackathon/view";
+    public static final String VIEW_PATH = "/view";
     private static Navigation instance;
     private LinkedList<Scene> scenes = new LinkedList<>();
     private Map<String, Controller> controllerMap = new HashMap<>();
@@ -55,6 +55,7 @@ public class Navigation {
 
         } catch (IOException e) {
             System.out.println("Failure to load view "+ view + " : " + e.getMessage());
+            e.printStackTrace();
         }
 
     }

@@ -1,4 +1,5 @@
 package org.academiadecodigo.hackathon.controller;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,8 +7,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.academiadecodigo.hackathon.Navigation;
+import org.academiadecodigo.hackathon.service.AuthenticateLogin;
+import org.academiadecodigo.hackathon.service.Service;
 import org.academiadecodigo.hackathon.service.ServiceRegistry;
 import org.academiadecodigo.hackathon.service.UserService;
+import org.academiadecodigo.hackathon.service.jpa.JpaAuthenticateLogin;
+import org.academiadecodigo.hackathon.service.jpa.JpaUserService;
 
 public class LoginController extends AbstractController implements Controller {
 
@@ -25,7 +30,10 @@ public class LoginController extends AbstractController implements Controller {
     @FXML
     private Label message;
 
-    private UserService userService;
+    private JpaAuthenticateLogin authenticate;
+
+    private JpaUserService userService;
+
 
     @FXML
     void onLogin(ActionEvent event) {
@@ -34,7 +42,8 @@ public class LoginController extends AbstractController implements Controller {
 
     public void initialize() {
 
-        userService = (UserService) ServiceRegistry.getServiceRegistry().getService(UserService.class.getSimpleName());
+        userService = (JpaUserService) ServiceRegistry.getServiceRegistry().getService(UserService.class.getSimpleName());
+        authenticate = (JpaAuthenticateLogin) ServiceRegistry.getServiceRegistry().getService(AuthenticateLogin.class.getSimpleName());
 
         if (userService == null) {
             throw new IllegalStateException("Unable to load user service from registry.");
@@ -55,7 +64,7 @@ public class LoginController extends AbstractController implements Controller {
             return;
         }
 
-        if (!userService.authenticate(username.getText(), password.getText())) {
+        if (!authenticate.authenticateLogin(username.getText(), password.getText())) {
             message.setText("authentication failed");
             return;
         }

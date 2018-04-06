@@ -4,9 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import org.academiadecodigo.hackathon.CategoryType;
-import org.academiadecodigo.hackathon.model.Product;
+import org.academiadecodigo.hackathon.model.products.Category;
+import org.academiadecodigo.hackathon.model.products.Product;
 import org.academiadecodigo.hackathon.service.ProductService;
 import org.academiadecodigo.hackathon.service.ServiceRegistry;
+import org.academiadecodigo.hackathon.service.jpa.JpaCategoryService;
+import org.academiadecodigo.hackathon.service.jpa.JpaProductService;
+
 import java.util.List;
 
 public class ProductsController extends AbstractController {
@@ -15,7 +19,8 @@ public class ProductsController extends AbstractController {
     private CategoryType categoryType;
     List<Product> products;
 
-    private ProductService productService;
+    private JpaProductService productService;
+    private JpaCategoryService categoryService;
 
     public ProductsController() {
 
@@ -45,17 +50,21 @@ public class ProductsController extends AbstractController {
 
     public void initialize() {
 
-        List<Category> categories = getAllCategories(id);
+        categoryService = (JpaCategoryService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
+
+        List<Category> categories = categoryService.categories();
 
         switch (categoryType) {
             case FOOD:
-                productService.getList(1);
+
+                productService.productList(categories.get(1));
+
                 break;
             case ANIMALS:
-                productService.getList(2);
+                productService.productList(categories.get(2));
                 break;
             case VEHICLES:
-                productService.getList(3);
+                productService.productList(categories.get(3));
                 break;
         }
 
@@ -66,7 +75,7 @@ public class ProductsController extends AbstractController {
     @FXML
     void onDeleteButton(ActionEvent event) {
 
-        productService = (ProductService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
+        productService = (JpaProductService) ServiceRegistry.getServiceRegistry().getService(ProductService.class.getSimpleName());
 
         if (productService == null) {
             throw new IllegalStateException("Unable to load user service from registry");

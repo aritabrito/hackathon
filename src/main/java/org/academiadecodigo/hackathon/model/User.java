@@ -1,14 +1,19 @@
 package org.academiadecodigo.hackathon.model;
 
+import antlr.LexerSharedInputState;
+import org.academiadecodigo.hackathon.model.products.Product;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 @Entity
-@Table (name="user")
+@Table(name = "user")
 public class User extends AbstractModel {
 
     private String firstName;
@@ -17,10 +22,17 @@ public class User extends AbstractModel {
     private String password;
     private String email;
 
-    @ManyToMany (
+    @ManyToMany(
             fetch = FetchType.EAGER
     )
-    private Map<Integer, Product> productsList = new HashMap<>();
+    private List<Product> productsList = new LinkedList<>();
+
+    public User() {
+    }
+
+    public void addProduct(Product product) {
+        productsList.add(product);
+    }
 
     public String getFirstName() {
         return firstName;
@@ -50,6 +62,10 @@ public class User extends AbstractModel {
         return password;
     }
 
+    public List<Product> getProductsList() {
+        return productsList;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -60,6 +76,10 @@ public class User extends AbstractModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setProductsList(List<Product> productsList) {
+        this.productsList = productsList;
     }
 
     @Override

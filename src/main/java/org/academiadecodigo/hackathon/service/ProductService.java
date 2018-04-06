@@ -1,4 +1,4 @@
 package org.academiadecodigo.hackathon.service;
 
-public interface ProductService {
+public interface ProductService extends Service{
 }
