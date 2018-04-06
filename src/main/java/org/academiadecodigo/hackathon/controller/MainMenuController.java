@@ -4,11 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import org.academiadecodigo.hackathon.CategoryType;
 import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.service.ProductService;
-import org.academiadecodigo.hackathon.service.ServiceRegistry;
-import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
 public class MainMenuController extends AbstractController {
@@ -18,6 +15,9 @@ public class MainMenuController extends AbstractController {
 
     private ProductService productService;
     private ProductsController nextController;
+
+
+
 
 
 

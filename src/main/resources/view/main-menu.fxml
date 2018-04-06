@@ -14,8 +14,6 @@
          </image>
       </ImageView>
 
-
-
       <Pane fx:id="animalsButton" layoutX="310.0" layoutY="387.0" onMouseClicked="#onAnimalsClick" prefHeight="119.0" prefWidth="177.0" />
    </children>
 </Pane>

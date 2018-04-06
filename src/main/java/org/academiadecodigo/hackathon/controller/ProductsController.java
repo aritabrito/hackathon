@@ -1,11 +1,13 @@
 package org.academiadecodigo.hackathon.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import org.academiadecodigo.hackathon.CategoryType;
+import org.academiadecodigo.hackathon.Navigation;
 import org.academiadecodigo.hackathon.model.products.Category;
 import org.academiadecodigo.hackathon.model.products.Product;
 import org.academiadecodigo.hackathon.service.ProductService;
@@ -13,6 +15,7 @@ import org.academiadecodigo.hackathon.service.ServiceRegistry;
 import org.academiadecodigo.hackathon.service.jpa.JpaCategoryService;
 import org.academiadecodigo.hackathon.service.jpa.JpaProductService;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -32,7 +35,21 @@ public class ProductsController extends AbstractController {
     }
 
 
+
         @FXML
+        private Pane logout;
+
+        @FXML
+        void logout(MouseEvent event) {
+            Navigation.getInstance().loadView("login");
+        }
+
+
+
+
+
+
+    @FXML
         private ImageView donkey;
     @FXML
     private ImageView cow;

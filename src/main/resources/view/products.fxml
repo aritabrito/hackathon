@@ -37,5 +37,6 @@
             <Image url="/images/4.png" />
          </image>
       </ImageView>
+      <Pane fx:id="logout" layoutX="14.0" layoutY="119.0" onMouseClicked="#logout" prefHeight="25.0" prefWidth="63.0" />
    </children>
 </Pane>

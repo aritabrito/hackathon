@@ -22,11 +22,11 @@ public class App extends Application {
     public static void main(String[] args) {
 
         User user1 = new User();
-        user1.setFirstName("rita");
-        user1.setLastName("brito");
-        user1.setUsername("rb");
-        user1.setEmail("oi");
-        user1.setPassword("oi");
+        user1.setFirstName("Catarina");
+        user1.setLastName("Machado");
+        user1.setUsername("catarinamachado");
+        user1.setEmail("123");
+        user1.setPassword("123");
 
         User user2 = new User();
         user2.setFirstName("cat");
